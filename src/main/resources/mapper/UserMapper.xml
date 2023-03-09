@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.example.KotlinSpring.mapper.UserMapper">
+
+    <resultMap id="userRM" type="com.example.KotlinSpring.entity.User">
+        <!--
+        id 只对主键进行映射
+        result 对一般字段的映射
+        -->
+    </resultMap>
+
+
+
+    <!--实现查询功能的select子标签-->
+
+
+    <select id="getAll" resultMap="userRM">
+        select * from "user"
+    </select>
+
+    <insert id="addUser">
+        insert into "user" (name, password, info)  values (#{user.name},#{user.password},#{user.info})
+    </insert>
+
+
+</mapper>
